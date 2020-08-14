@@ -13,10 +13,13 @@ import heartIcon from "../../assets/images/icons/heart.png";
 function Landing() {
   const { navigate } = useNavigation();
 
-  function handleNavigationToGiveClasses() {
+  function handleNavigateToGiveClassesPages() {
     navigate("GiveClasses");
   }
 
+  function handleNaviugateToStudyPages() {
+    navigate("Study");
+  }
   return (
     <View style={styles.container}>
       <Image source={landingImg} style={styles.banner} />
@@ -27,13 +30,16 @@ function Landing() {
       </Text>
 
       <View style={styles.buttonsContainer}>
-        <RectButton style={[styles.button, styles.buttonPrimary]}>
+        <RectButton
+          onPress={handleNaviugateToStudyPages}
+          style={[styles.button, styles.buttonPrimary]}
+        >
           <Image source={studyIcon} />
           <Text style={styles.buttonText}>Estudar</Text>
         </RectButton>
 
         <RectButton
-          onPress={handleNavigationToGiveClasses}
+          onPress={handleNavigateToGiveClassesPages}
           style={[styles.button, styles.buttonSecondary]}
         >
           <Image source={giveClassesIcon} />
